@@ -1,7 +1,7 @@
 FROM --platform=linux/amd64 ubuntu:22.04 as builder
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y clang libtinfo5 libjpeg-dev libz-dev build-essential
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y clang libjpeg-dev libz-dev build-essential
 
 RUN apt install -y apt-transport-https curl gnupg
 RUN curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg
