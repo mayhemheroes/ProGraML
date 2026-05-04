@@ -14,9 +14,7 @@ ENV CXX=clang++
 
 COPY . /repo
 WORKDIR /repo
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3-pip python-is-python3
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git
-RUN make -j8 init
 RUN bazel-4.0.0 build //programl/bin:graph2json
 
 FROM ubuntu:22.04 as package
